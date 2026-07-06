@@ -1,0 +1,6 @@
+body{font-family:Arial,sans-serif;background:#f5f7fa;margin:0}
+header{background:#b71c1c;color:#fff;padding:24px;text-align:center}
+main{max-width:900px;margin:auto;padding:16px}
+section{background:#fff;padding:20px;margin:16px 0;border-radius:10px}
+button{padding:12px;margin:6px;border:none;border-radius:8px;background:#1565c0;color:#fff}
+footer{text-align:center;padding:20px;color:#666}

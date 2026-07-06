@@ -1,0 +1,1 @@
+document.querySelectorAll('button').forEach(b=>b.onclick=()=>alert('Disponible en la siguiente versión'));
