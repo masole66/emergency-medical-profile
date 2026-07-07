@@ -1,119 +1,277 @@
 /*
 ==========================================================
 Emergency Medical Profile
-Version 0.2.1
+Version 0.2.2
+Application Controller
 ==========================================================
 */
+
+let profile = null;
 
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
 
+    profile = loadProfile();
+
+    renderProfile();
+
     registerButtons();
 
-    console.log("Emergency Medical Profile v0.2.1 loaded");
+    console.log("Emergency Medical Profile v0.2.2");
 
 }
 
-function registerButtons() {
+/*=========================================================
+RENDER
+=========================================================*/
 
-    connectButton("btnMedication", showMedication);
+function renderProfile() {
 
-    connectButton("btnProtocol", showProtocol);
+    updateHeader();
 
-    connectButton("btnContacts", showContacts);
+    updateCritical();
 
-    connectButton("btnRecord", showMedicalRecord);
+    updateMedication();
+
+    updateAllergies();
+
+    updateHistory();
+
+    updateEmergencyContact();
 
 }
 
-function connectButton(id, action) {
+function updateHeader() {
 
-    const button = document.getElementById(id);
+    const h2 = document.querySelector(".hero h2");
 
-    if (button) {
+    if(h2){
 
-        button.addEventListener("click", action);
+        h2.textContent =
+            profile.patient.firstName +
+            " " +
+            profile.patient.lastName;
 
     }
 
 }
 
-function showMedication() {
+function updateCritical() {
+
+    const section = document.querySelector(".critical");
+
+    if(!section) return;
+
+    const paragraphs = section.querySelectorAll("p");
+
+    if(paragraphs.length < 2) return;
+
+    paragraphs[0].textContent =
+        profile.patient.diagnosis;
+
+    paragraphs[1].innerHTML =
+        "<strong>Blood Group:</strong> " +
+        profile.patient.bloodGroup;
+
+}
+
+function updateMedication(){
+
+    fillList(
+
+        "Essential Medication",
+
+        profile.medication
+
+    );
+
+}
+
+function updateAllergies(){
+
+    fillList(
+
+        "Known Allergies",
+
+        profile.allergies
+
+    );
+
+}
+
+function updateHistory(){
+
+    fillList(
+
+        "Relevant Medical History",
+
+        profile.history
+
+    );
+
+}
+
+function updateEmergencyContact(){
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+
+        const title = card.querySelector("h3");
+
+        if(!title) return;
+
+        if(title.textContent !== "Emergency Contact") return;
+
+        const p = card.querySelectorAll("p");
+
+        if(p.length<2) return;
+
+        p[0].innerHTML =
+            "<strong>Name:</strong> " +
+            profile.emergencyContact.name;
+
+        p[1].innerHTML =
+            "<strong>Telephone:</strong> " +
+            profile.emergencyContact.phone;
+
+    });
+
+}
+
+function fillList(title,data){
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+
+        const h3 = card.querySelector("h3");
+
+        if(!h3) return;
+
+        if(h3.textContent!==title) return;
+
+        const ul = card.querySelector("ul");
+
+        if(!ul) return;
+
+        ul.innerHTML="";
+
+        data.forEach(item=>{
+
+            const li=document.createElement("li");
+
+            li.textContent=item;
+
+            ul.appendChild(li);
+
+        });
+
+    });
+
+}
+
+/*=========================================================
+BUTTONS
+=========================================================*/
+
+function registerButtons(){
+
+    connectButton("btnMedication",showMedication);
+
+    connectButton("btnProtocol",showProtocol);
+
+    connectButton("btnContacts",showContacts);
+
+    connectButton("btnRecord",showMedicalRecord);
+
+}
+
+function connectButton(id,action){
+
+    const button=document.getElementById(id);
+
+    if(button){
+
+        button.addEventListener("click",action);
+
+    }
+
+}
+
+function showMedication(){
 
     scrollToCard("Essential Medication");
 
 }
 
-function showProtocol() {
-
-    alert(
-`EMERGENCY PROTOCOL
-
-1. Inform medical staff that the patient has postsurgical hypoparathyroidism.
-
-2. Check symptoms of hypocalcaemia.
-
-3. Review current medication.
-
-4. Follow local emergency protocol.`
-    );
-
-}
-
-function showContacts() {
+function showContacts(){
 
     scrollToCard("Emergency Contact");
 
 }
 
-function showMedicalRecord() {
+function showMedicalRecord(){
 
     scrollToCard("Relevant Medical History");
 
 }
 
-function scrollToCard(title) {
+function showProtocol(){
 
-    const cards = document.querySelectorAll(".card");
+    alert(
+`Emergency protocol
 
-    for (const card of cards) {
+• Inform emergency physician.
 
-        const heading = card.querySelector("h3");
+• Check calcium symptoms.
 
-        if (!heading) continue;
+• Review medication.
 
-        if (heading.textContent.trim() === title) {
-
-            card.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "start"
-
-            });
-
-            flash(card);
-
-            return;
-
-        }
-
-    }
+• Follow local protocol.`
+    );
 
 }
 
-function flash(element) {
+/*=========================================================
+UTILITIES
+=========================================================*/
 
-    const original = element.style.boxShadow;
+function scrollToCard(title){
 
-    element.style.boxShadow =
-        "0 0 0 4px rgba(11,94,215,.35)";
+    document.querySelectorAll(".card").forEach(card=>{
 
-    setTimeout(() => {
+        const h3=card.querySelector("h3");
 
-        element.style.boxShadow = original;
+        if(!h3) return;
 
-    }, 1200);
+        if(h3.textContent!==title) return;
+
+        card.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"start"
+
+        });
+
+        highlight(card);
+
+    });
+
+}
+
+function highlight(card){
+
+    card.style.transition="0.3s";
+
+    card.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        card.style.transform="scale(1)";
+
+    },500);
 
 }
