@@ -1,21 +1,175 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Emergency Medical Profile</title>
-<link rel="stylesheet" href="style.css"></head>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
 <body>
-<header><h1>⚕ Emergency Medical Profile</h1><h2>Mónica A. Solé Rojo</h2>
-<p><strong>ENDOCRINE EMERGENCY</strong></p></header>
-<main>
-<section><h3>Critical Condition</h3>
-<p>Severe postsurgical hypoparathyroidism</p>
-<p><strong>Blood Group:</strong> O+</p></section>
-<section><h3>Essential Medication</h3>
-<ul><li>Yorvipath 12 μg SC — 23:00</li>
-<li>Eutirox 100 μg — 06:45</li>
-<li>Rosuvastatin 10 mg — 21:00</li></ul></section>
-<nav>
-<button>Medication</button><button>Emergency Protocol</button>
-<button>Contacts</button><button>Medical Record</button>
-</nav></main>
-<footer>Version 0.1 · Updated July 2026</footer>
-<script src="app.js"></script></body></html>
+
+<header class="hero">
+
+    <h1>⚕ Emergency Medical Profile</h1>
+
+    <h2>Mónica A. Solé Rojo</h2>
+
+    <p class="alert">
+        ENDOCRINE EMERGENCY
+    </p>
+
+</header>
+
+
+<main class="container">
+
+    <!-- RESUMEN CLÍNICO -->
+
+    <section class="card critical">
+
+        <h3>Critical Condition</h3>
+
+        <p>
+            Severe postsurgical hypoparathyroidism
+        </p>
+
+        <p>
+            <strong>Blood Group:</strong> O+
+        </p>
+
+    </section>
+
+
+
+    <!-- MEDICACIÓN -->
+
+    <section class="card">
+
+        <h3>Essential Medication</h3>
+
+        <ul>
+
+            <li>Yorvipath 12 μg SC — 23:00</li>
+
+            <li>Eutirox 100 μg — 06:45</li>
+
+            <li>Rosuvastatin 10 mg — 21:00</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ALERGIAS -->
+
+    <section class="card">
+
+        <h3>Known Allergies</h3>
+
+        <ul>
+
+            <li>No drug allergies reported</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ENFERMEDADES -->
+
+    <section class="card">
+
+        <h3>Relevant Medical History</h3>
+
+        <ul>
+
+            <li>Postsurgical hypoparathyroidism</li>
+
+            <li>Hypothyroidism</li>
+
+            <li>Dyslipidemia</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- CONTACTO -->
+
+    <section class="card">
+
+        <h3>Emergency Contact</h3>
+
+        <p>
+
+            <strong>Name:</strong>
+
+            Pending
+
+        </p>
+
+        <p>
+
+            <strong>Telephone:</strong>
+
+            Pending
+
+        </p>
+
+    </section>
+
+
+
+    <!-- BOTONES -->
+
+    <nav class="main-menu">
+
+        <button id="btnMedication">
+
+            Medication
+
+        </button>
+
+        <button id="btnProtocol">
+
+            Emergency Protocol
+
+        </button>
+
+        <button id="btnContacts">
+
+            Contacts
+
+        </button>
+
+        <button id="btnRecord">
+
+            Medical Record
+
+        </button>
+
+    </nav>
+
+</main>
+
+
+<footer>
+
+Version 0.2.1 · Development Build
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
