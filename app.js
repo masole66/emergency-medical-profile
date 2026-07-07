@@ -185,7 +185,7 @@ function registerButtons(){
     connectButton("btnContacts",showContacts);
 
     connectButton("btnRecord",showMedicalRecord);
-
+connectButton("btnEdit",openEditor);
 }
 
 function connectButton(id,action){
