@@ -1,204 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Emergency Medical Profile</title>
+<section id="cardCritical" class="card critical">
 
-<link rel="stylesheet" href="style.css">
+    <h3>Critical Condition</h3>
 
-</head>
+    <p>Severe postsurgical hypoparathyroidism</p>
 
-<body>
-
-<header class="hero">
-
-<h1>⚕ Emergency Medical Profile</h1>
-
-<h2>Mónica A. Solé Rojo</h2>
-
-<p class="alert">
-ENDOCRINE EMERGENCY
-</p>
-
-</header>
-
-<main class="container">
-
-<section class="card critical">
-
-<h3>Critical Condition</h3>
-
-<p>Severe postsurgical hypoparathyroidism</p>
-
-<p><strong>Blood Group:</strong> O+</p>
+    <p><strong>Blood Group:</strong> O+</p>
 
 </section>
 
-<section class="card">
+<section id="cardMedication" class="card">
 
-<h3>Essential Medication</h3>
+    <h3>Essential Medication</h3>
 
-<ul></ul>
-
-</section>
-
-<section class="card">
-
-<h3>Known Allergies</h3>
-
-<ul></ul>
+    <ul></ul>
 
 </section>
 
-<section class="card">
+<section id="cardAllergies" class="card">
 
-<h3>Relevant Medical History</h3>
+    <h3>Known Allergies</h3>
 
-<ul></ul>
-
-</section>
-
-<section class="card">
-
-<h3>Emergency Contact</h3>
-
-<p><strong>Name:</strong> Pending</p>
-
-<p><strong>Telephone:</strong> Pending</p>
+    <ul></ul>
 
 </section>
 
-<nav class="main-menu">
+<section id="cardHistory" class="card">
 
-<button id="btnMedication">Medication</button>
+    <h3>Relevant Medical History</h3>
 
-<button id="btnProtocol">Emergency Protocol</button>
-
-<button id="btnContacts">Contacts</button>
-
-<button id="btnRecord">Medical Record</button>
-
-<button id="btnEdit">Edit Profile</button>
-
-</nav>
-
-<section id="editorPanel" class="card" hidden>
-
-<h3>Edit Medical Profile</h3>
-
-<label>
-
-First name
-
-<input id="firstName">
-
-</label>
-
-<label>
-
-Last name
-
-<input id="lastName">
-
-</label>
-
-<label>
-
-Blood group
-
-<input id="bloodGroup">
-
-</label>
-
-<label>
-
-Diagnosis
-
-<input id="diagnosis">
-
-</label>
-
-<label>
-
-Emergency contact
-
-<input id="contactName">
-
-</label>
-
-<label>
-
-Telephone
-
-<input id="contactPhone">
-
-</label>
-
-<label>
-
-Medication (one line per item)
-
-<textarea
-id="medication"
-rows="5"></textarea>
-
-</label>
-
-<label>
-
-Allergies (one line per item)
-
-<textarea
-id="allergies"
-rows="4"></textarea>
-
-</label>
-
-<label>
-
-Medical history (one line per item)
-
-<textarea
-id="history"
-rows="5"></textarea>
-
-</label>
-
-<div class="editorButtons">
-
-<button
-type="button"
-id="btnCancel">
-
-Cancel
-
-</button>
-
-<button
-type="button"
-id="btnSave">
-
-Save Profile
-
-</button>
-
-</div>
+    <ul></ul>
 
 </section>
 
-</main>
+<section id="cardContact" class="card">
 
-<footer>
+    <h3>Emergency Contact</h3>
 
-Version 0.3.1
+    <p><strong>Name:</strong> Pending</p>
 
-</footer>
+    <p><strong>Telephone:</strong> Pending</p>
 
-<script src="storage.js"></script>
-<script src="editor.js"></script>
-<script src="app.js"></script>
-
-</body>
-
-</html>
+</section>
