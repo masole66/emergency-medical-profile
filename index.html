@@ -1,43 +1,326 @@
-<section id="cardCritical" class="card critical">
+<!DOCTYPE html>
+<html lang="en">
 
-    <h3>Critical Condition</h3>
+<head>
 
-    <p>Severe postsurgical hypoparathyroidism</p>
+<meta charset="UTF-8">
 
-    <p><strong>Blood Group:</strong> O+</p>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+
+<title>Emergency Medical Profile</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1>⚕ Emergency Medical Profile</h1>
+
+<h2 id="patientName">
+
+Emergency Medical Profile
+
+</h2>
+
+<p class="alert">
+
+ENDOCRINE EMERGENCY
+
+</p>
+
+</header>
+
+<main class="container">
+
+<section
+id="cardCritical"
+class="card critical">
+
+<h3>
+
+Critical Condition
+
+</h3>
+
+<p id="diagnosis">
+
+Diagnosis
+
+</p>
+
+<p>
+
+<strong>Blood Group:</strong>
+
+<span id="bloodGroup">
+
+—
+
+</span>
+
+</p>
 
 </section>
 
-<section id="cardMedication" class="card">
+<section
+id="cardMedication"
+class="card">
 
-    <h3>Essential Medication</h3>
+<h3>
 
-    <ul></ul>
+Essential Medication
 
-</section>
+</h3>
 
-<section id="cardAllergies" class="card">
+<ul id="medicationList">
 
-    <h3>Known Allergies</h3>
-
-    <ul></ul>
-
-</section>
-
-<section id="cardHistory" class="card">
-
-    <h3>Relevant Medical History</h3>
-
-    <ul></ul>
+</ul>
 
 </section>
 
-<section id="cardContact" class="card">
+<section
+id="cardAllergies"
+class="card">
 
-    <h3>Emergency Contact</h3>
+<h3>
 
-    <p><strong>Name:</strong> Pending</p>
+Known Allergies
 
-    <p><strong>Telephone:</strong> Pending</p>
+</h3>
+
+<ul id="allergyList">
+
+</ul>
 
 </section>
+
+<section
+id="cardHistory"
+class="card">
+
+<h3>
+
+Relevant Medical History
+
+</h3>
+
+<ul id="historyList">
+
+</ul>
+
+</section>
+
+<section
+id="cardContact"
+class="card">
+
+<h3>
+
+Emergency Contact
+
+</h3>
+
+<p>
+
+<strong>Name:</strong>
+
+<span id="contactName">
+
+—
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Telephone:</strong>
+
+<span id="contactPhone">
+
+—
+
+</span>
+
+</p>
+
+</section>
+
+<nav class="main-menu">
+
+<button id="btnMedication">
+
+Medication
+
+</button>
+
+<button id="btnProtocol">
+
+Emergency Protocol
+
+</button>
+
+<button id="btnContacts">
+
+Contacts
+
+</button>
+
+<button id="btnRecord">
+
+Medical Record
+
+</button>
+
+<button id="btnEdit">
+
+Edit Profile
+
+</button>
+
+</nav>
+
+<section
+id="editorPanel"
+class="card"
+hidden>
+
+<h3>
+
+Edit Medical Profile
+
+</h3>
+
+<label>
+
+First name
+
+<input id="firstName">
+
+</label>
+
+<label>
+
+Last name
+
+<input id="lastName">
+
+</label>
+
+<label>
+
+Blood group
+
+<input id="bloodGroupInput">
+
+</label>
+
+<label>
+
+Diagnosis
+
+<input id="diagnosisInput">
+
+</label>
+
+<label>
+
+Emergency contact
+
+<input id="contactNameInput">
+
+</label>
+
+<label>
+
+Telephone
+
+<input id="contactPhoneInput">
+
+</label>
+
+<label>
+
+Medication
+(one item per line)
+
+<textarea
+id="medicationInput"
+rows="5">
+
+</textarea>
+
+</label>
+
+<label>
+
+Allergies
+(one item per line)
+
+<textarea
+id="allergiesInput"
+rows="4">
+
+</textarea>
+
+</label>
+
+<label>
+
+Medical History
+(one item per line)
+
+<textarea
+id="historyInput"
+rows="5">
+
+</textarea>
+
+</label>
+
+<div class="editorButtons">
+
+<button
+id="btnCancel"
+type="button">
+
+Cancel
+
+</button>
+
+<button
+id="btnSave"
+type="button">
+
+Save Profile
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+Emergency Medical Profile
+
+Version 0.4.0
+
+</footer>
+
+<script src="storage.js"></script>
+
+<script src="editor.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
