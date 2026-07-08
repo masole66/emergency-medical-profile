@@ -2,7 +2,7 @@
 ==========================================================
 Emergency Medical Profile
 Visual Editor
-Version 0.3.0
+Version 0.3.1
 ==========================================================
 */
 
@@ -27,6 +27,15 @@ function openEditor() {
 
     document.getElementById("contactPhone").value =
         profile.emergencyContact.phone;
+
+    document.getElementById("medication").value =
+        profile.medication.join("\n");
+
+    document.getElementById("allergies").value =
+        profile.allergies.join("\n");
+
+    document.getElementById("history").value =
+        profile.history.join("\n");
 
 }
 
@@ -56,6 +65,15 @@ function saveEditor(){
     profile.emergencyContact.phone =
         document.getElementById("contactPhone").value.trim();
 
+    profile.medication =
+        textareaToArray("medication");
+
+    profile.allergies =
+        textareaToArray("allergies");
+
+    profile.history =
+        textareaToArray("history");
+
     saveProfile(profile);
 
     renderProfile();
@@ -64,29 +82,34 @@ function saveEditor(){
 
 }
 
+function textareaToArray(id){
+
+    return document
+        .getElementById(id)
+        .value
+        .split("\n")
+        .map(item => item.trim())
+        .filter(item => item.length > 0);
+
+}
+
 function initialiseEditor(){
 
-    const saveButton =
+    const save =
         document.getElementById("btnSave");
 
-    const cancelButton =
+    const cancel =
         document.getElementById("btnCancel");
 
-    if(saveButton){
+    if(save){
 
-        saveButton.addEventListener(
-            "click",
-            saveEditor
-        );
+        save.onclick = saveEditor;
 
     }
 
-    if(cancelButton){
+    if(cancel){
 
-        cancelButton.addEventListener(
-            "click",
-            closeEditor
-        );
+        cancel.onclick = closeEditor;
 
     }
 
