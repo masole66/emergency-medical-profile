@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Emergency Medical Profile</title>
 
@@ -26,28 +26,17 @@
 
 </header>
 
-
 <main class="container">
-
-    <!-- RESUMEN CLÍNICO -->
 
     <section class="card critical">
 
         <h3>Critical Condition</h3>
 
-        <p>
-            Severe postsurgical hypoparathyroidism
-        </p>
+        <p>Severe postsurgical hypoparathyroidism</p>
 
-        <p>
-            <strong>Blood Group:</strong> O+
-        </p>
+        <p><strong>Blood Group:</strong> O+</p>
 
     </section>
-
-
-
-    <!-- MEDICACIÓN -->
 
     <section class="card">
 
@@ -56,18 +45,12 @@
         <ul>
 
             <li>Yorvipath 12 μg SC — 23:00</li>
-
             <li>Eutirox 100 μg — 06:45</li>
-
             <li>Rosuvastatin 10 mg — 21:00</li>
 
         </ul>
 
     </section>
-
-
-
-    <!-- ALERGIAS -->
 
     <section class="card">
 
@@ -81,10 +64,6 @@
 
     </section>
 
-
-
-    <!-- ENFERMEDADES -->
-
     <section class="card">
 
         <h3>Relevant Medical History</h3>
@@ -92,80 +71,125 @@
         <ul>
 
             <li>Postsurgical hypoparathyroidism</li>
-
             <li>Hypothyroidism</li>
-
             <li>Dyslipidemia</li>
 
         </ul>
 
     </section>
 
-
-
-    <!-- CONTACTO -->
-
     <section class="card">
 
         <h3>Emergency Contact</h3>
 
-        <p>
+        <p><strong>Name:</strong> Pending</p>
 
-            <strong>Name:</strong>
-
-            Pending
-
-        </p>
-
-        <p>
-
-            <strong>Telephone:</strong>
-
-            Pending
-
-        </p>
+        <p><strong>Telephone:</strong> Pending</p>
 
     </section>
 
-
-
-    <!-- BOTONES -->
-
     <nav class="main-menu">
 
-    <button id="btnMedication">
-        Medication
-    </button>
+        <button id="btnMedication">Medication</button>
 
-    <button id="btnProtocol">
-        Emergency Protocol
-    </button>
+        <button id="btnProtocol">Emergency Protocol</button>
 
-    <button id="btnContacts">
-        Contacts
-    </button>
+        <button id="btnContacts">Contacts</button>
 
-    <button id="btnRecord">
-        Medical Record
-    </button>
+        <button id="btnRecord">Medical Record</button>
 
-    <button id="btnEdit">
-        Edit Profile
-    </button>
+        <button id="btnEdit">Edit Profile</button>
 
-</nav>
+    </nav>
+
+    <!-- ========================= -->
+
+    <!-- PROFILE EDITOR -->
+
+    <!-- ========================= -->
+
+    <section id="editorPanel" class="card" hidden>
+
+        <h3>Edit Medical Profile</h3>
+
+        <label>
+
+            First name
+
+            <input id="firstName">
+
+        </label>
+
+        <label>
+
+            Last name
+
+            <input id="lastName">
+
+        </label>
+
+        <label>
+
+            Blood group
+
+            <input id="bloodGroup">
+
+        </label>
+
+        <label>
+
+            Diagnosis
+
+            <input id="diagnosis">
+
+        </label>
+
+        <label>
+
+            Emergency contact
+
+            <input id="contactName">
+
+        </label>
+
+        <label>
+
+            Telephone
+
+            <input id="contactPhone">
+
+        </label>
+
+        <div class="editorButtons">
+
+            <button id="btnCancel">
+
+                Cancel
+
+            </button>
+
+            <button id="btnSave">
+
+                Save Profile
+
+            </button>
+
+        </div>
+
+    </section>
 
 </main>
 
-
 <footer>
 
-Version 0.2.1 · Development Build
+Version 0.3.0
 
 </footer>
 
 <script src="storage.js"></script>
+
 <script src="editor.js"></script>
+
 <script src="app.js"></script>
 
 </body>
