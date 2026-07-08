@@ -17,7 +17,9 @@ function init() {
     renderProfile();
 
     registerButtons();
-
+    
+    initialiseEditor();
+    
     console.log("Emergency Medical Profile v0.2.2");
 
 }
