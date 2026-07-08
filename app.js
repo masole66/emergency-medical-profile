@@ -20,7 +20,7 @@ function init() {
     
     initialiseEditor();
     
-    console.log("Emergency Medical Profile v0.2.2");
+    console.log("Emergency Medical Profile v0.2.3");
 
 }
 
