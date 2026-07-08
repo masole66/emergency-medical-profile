@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Emergency Medical Profile</title>
 
 <link rel="stylesheet" href="style.css">
@@ -16,180 +13,190 @@
 
 <header class="hero">
 
-    <h1>⚕ Emergency Medical Profile</h1>
+<h1>⚕ Emergency Medical Profile</h1>
 
-    <h2>Mónica A. Solé Rojo</h2>
+<h2>Mónica A. Solé Rojo</h2>
 
-    <p class="alert">
-        ENDOCRINE EMERGENCY
-    </p>
+<p class="alert">
+ENDOCRINE EMERGENCY
+</p>
 
 </header>
 
 <main class="container">
 
-    <section class="card critical">
+<section class="card critical">
 
-        <h3>Critical Condition</h3>
+<h3>Critical Condition</h3>
 
-        <p>Severe postsurgical hypoparathyroidism</p>
+<p>Severe postsurgical hypoparathyroidism</p>
 
-        <p><strong>Blood Group:</strong> O+</p>
+<p><strong>Blood Group:</strong> O+</p>
 
-    </section>
+</section>
 
-    <section class="card">
+<section class="card">
 
-        <h3>Essential Medication</h3>
+<h3>Essential Medication</h3>
 
-        <ul>
+<ul></ul>
 
-            <li>Yorvipath 12 μg SC — 23:00</li>
-            <li>Eutirox 100 μg — 06:45</li>
-            <li>Rosuvastatin 10 mg — 21:00</li>
+</section>
 
-        </ul>
+<section class="card">
 
-    </section>
+<h3>Known Allergies</h3>
 
-    <section class="card">
+<ul></ul>
 
-        <h3>Known Allergies</h3>
+</section>
 
-        <ul>
+<section class="card">
 
-            <li>No drug allergies reported</li>
+<h3>Relevant Medical History</h3>
 
-        </ul>
+<ul></ul>
 
-    </section>
+</section>
 
-    <section class="card">
+<section class="card">
 
-        <h3>Relevant Medical History</h3>
+<h3>Emergency Contact</h3>
 
-        <ul>
+<p><strong>Name:</strong> Pending</p>
 
-            <li>Postsurgical hypoparathyroidism</li>
-            <li>Hypothyroidism</li>
-            <li>Dyslipidemia</li>
+<p><strong>Telephone:</strong> Pending</p>
 
-        </ul>
+</section>
 
-    </section>
+<nav class="main-menu">
 
-    <section class="card">
+<button id="btnMedication">Medication</button>
 
-        <h3>Emergency Contact</h3>
+<button id="btnProtocol">Emergency Protocol</button>
 
-        <p><strong>Name:</strong> Pending</p>
+<button id="btnContacts">Contacts</button>
 
-        <p><strong>Telephone:</strong> Pending</p>
+<button id="btnRecord">Medical Record</button>
 
-    </section>
+<button id="btnEdit">Edit Profile</button>
 
-    <nav class="main-menu">
+</nav>
 
-        <button id="btnMedication">Medication</button>
+<section id="editorPanel" class="card" hidden>
 
-        <button id="btnProtocol">Emergency Protocol</button>
+<h3>Edit Medical Profile</h3>
 
-        <button id="btnContacts">Contacts</button>
+<label>
 
-        <button id="btnRecord">Medical Record</button>
+First name
 
-        <button id="btnEdit">Edit Profile</button>
+<input id="firstName">
 
-    </nav>
+</label>
 
-    <!-- ========================= -->
+<label>
 
-    <!-- PROFILE EDITOR -->
+Last name
 
-    <!-- ========================= -->
+<input id="lastName">
 
-    <section id="editorPanel" class="card" hidden>
+</label>
 
-        <h3>Edit Medical Profile</h3>
+<label>
 
-        <label>
+Blood group
 
-            First name
+<input id="bloodGroup">
 
-            <input id="firstName">
+</label>
 
-        </label>
+<label>
 
-        <label>
+Diagnosis
 
-            Last name
+<input id="diagnosis">
 
-            <input id="lastName">
+</label>
 
-        </label>
+<label>
 
-        <label>
+Emergency contact
 
-            Blood group
+<input id="contactName">
 
-            <input id="bloodGroup">
+</label>
 
-        </label>
+<label>
 
-        <label>
+Telephone
 
-            Diagnosis
+<input id="contactPhone">
 
-            <input id="diagnosis">
+</label>
 
-        </label>
+<label>
 
-        <label>
+Medication (one line per item)
 
-            Emergency contact
+<textarea
+id="medication"
+rows="5"></textarea>
 
-            <input id="contactName">
+</label>
 
-        </label>
+<label>
 
-        <label>
+Allergies (one line per item)
 
-            Telephone
+<textarea
+id="allergies"
+rows="4"></textarea>
 
-            <input id="contactPhone">
+</label>
 
-        </label>
+<label>
 
-        <div class="editorButtons">
+Medical history (one line per item)
 
-            <button id="btnCancel">
+<textarea
+id="history"
+rows="5"></textarea>
 
-                Cancel
+</label>
 
-            </button>
+<div class="editorButtons">
 
-            <button id="btnSave">
+<button
+type="button"
+id="btnCancel">
 
-                Save Profile
+Cancel
 
-            </button>
+</button>
 
-        </div>
+<button
+type="button"
+id="btnSave">
 
-    </section>
+Save Profile
+
+</button>
+
+</div>
+
+</section>
 
 </main>
 
 <footer>
 
-Version 0.3.0
+Version 0.3.1
 
 </footer>
 
 <script src="storage.js"></script>
-
 <script src="editor.js"></script>
-
 <script src="app.js"></script>
 
 </body>
