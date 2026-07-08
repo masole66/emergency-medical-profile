@@ -2,7 +2,7 @@
 ==========================================================
 Emergency Medical Profile
 Visual Editor
-Version 0.3.1
+Release 0.4
 ==========================================================
 */
 
@@ -16,36 +16,36 @@ function openEditor() {
     document.getElementById("lastName").value =
         profile.patient.lastName;
 
-    document.getElementById("bloodGroup").value =
+    document.getElementById("bloodGroupInput").value =
         profile.patient.bloodGroup;
 
-    document.getElementById("diagnosis").value =
+    document.getElementById("diagnosisInput").value =
         profile.patient.diagnosis;
 
-    document.getElementById("contactName").value =
+    document.getElementById("contactNameInput").value =
         profile.emergencyContact.name;
 
-    document.getElementById("contactPhone").value =
+    document.getElementById("contactPhoneInput").value =
         profile.emergencyContact.phone;
 
-    document.getElementById("medication").value =
+    document.getElementById("medicationInput").value =
         profile.medication.join("\n");
 
-    document.getElementById("allergies").value =
+    document.getElementById("allergiesInput").value =
         profile.allergies.join("\n");
 
-    document.getElementById("history").value =
+    document.getElementById("historyInput").value =
         profile.history.join("\n");
 
 }
 
-function closeEditor(){
+function closeEditor() {
 
     document.getElementById("editorPanel").hidden = true;
 
 }
 
-function saveEditor(){
+function saveEditor() {
 
     profile.patient.firstName =
         document.getElementById("firstName").value.trim();
@@ -54,25 +54,25 @@ function saveEditor(){
         document.getElementById("lastName").value.trim();
 
     profile.patient.bloodGroup =
-        document.getElementById("bloodGroup").value.trim();
+        document.getElementById("bloodGroupInput").value.trim();
 
     profile.patient.diagnosis =
-        document.getElementById("diagnosis").value.trim();
+        document.getElementById("diagnosisInput").value.trim();
 
     profile.emergencyContact.name =
-        document.getElementById("contactName").value.trim();
+        document.getElementById("contactNameInput").value.trim();
 
     profile.emergencyContact.phone =
-        document.getElementById("contactPhone").value.trim();
+        document.getElementById("contactPhoneInput").value.trim();
 
     profile.medication =
-        textareaToArray("medication");
+        textAreaToArray("medicationInput");
 
     profile.allergies =
-        textareaToArray("allergies");
+        textAreaToArray("allergiesInput");
 
     profile.history =
-        textareaToArray("history");
+        textAreaToArray("historyInput");
 
     saveProfile(profile);
 
@@ -82,7 +82,7 @@ function saveEditor(){
 
 }
 
-function textareaToArray(id){
+function textAreaToArray(id) {
 
     return document
         .getElementById(id)
@@ -93,24 +93,20 @@ function textareaToArray(id){
 
 }
 
-function initialiseEditor(){
+function initialiseEditor() {
 
-    const save =
-        document.getElementById("btnSave");
+    document
+        .getElementById("btnSave")
+        .addEventListener(
+            "click",
+            saveEditor
+        );
 
-    const cancel =
-        document.getElementById("btnCancel");
-
-    if(save){
-
-        save.onclick = saveEditor;
-
-    }
-
-    if(cancel){
-
-        cancel.onclick = closeEditor;
-
-    }
+    document
+        .getElementById("btnCancel")
+        .addEventListener(
+            "click",
+            closeEditor
+        );
 
 }
